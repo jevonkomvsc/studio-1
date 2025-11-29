@@ -120,7 +120,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 <Link href="/stock">
                   <Building />
                   <span>Stok Saya</span>
-                </Link>p
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/componentsui/table';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { mockProducts } from '@/lib/mock-data';
@@ -54,7 +54,7 @@ export default function StockPage() {
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="price" className="text-right">
                     Harga Kontrak
-                    </Label>CI
+                    </Label>
                     <Input id="price" type="number" placeholder="12000000" className="col-span-3" />
                 </div>
                 </div>

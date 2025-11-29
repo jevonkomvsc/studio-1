@@ -19,7 +19,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { getRecommendations } from './actions';
 import type { RecommendHalalVendorsOutput } from '@/ai/flows/recommend-halal-vendors';
 import { Progress } from '@/components/ui/progress';
-import { Separator } from '@/componentsy/ui/separator';
+import { Separator } from '@/components/ui/separator';
 
 const formSchema = z.object({
   requirements: z.string().min(20, {
