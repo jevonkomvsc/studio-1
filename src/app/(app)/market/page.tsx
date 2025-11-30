@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Check, Shield, Zap } from 'lucide-react';
+import { Check, Shield, Zap, Gem } from 'lucide-react';
 
 const services = [
   {
@@ -23,6 +23,7 @@ const services = [
       'Update progres mingguan',
     ],
     isPopular: true,
+    icon: Zap
   },
   {
     title: 'Pendampingan Penuh',
@@ -35,7 +36,21 @@ const services = [
       'Jaminan sertifikat terbit atau uang kembali',
     ],
     isPopular: false,
+    icon: Shield
   },
+  {
+    title: 'Layanan V.I.P',
+    price: 'Rp 10.000.000',
+    description: 'Solusi lengkap tanpa repot. Kami urus semuanya dari A-Z, Anda tinggal terima beres.',
+    features: [
+        'Semua fitur Pendampingan Penuh',
+        'Pengurusan Izin Edar (jika diperlukan)',
+        'Desain kemasan berlogo Halal',
+        'Konsultasi pasca-sertifikasi selama 6 bulan',
+    ],
+    isPopular: false,
+    icon: Gem
+  }
 ];
 
 export default function MarketPage() {
@@ -58,7 +73,7 @@ export default function MarketPage() {
           Berdasarkan data kami, 89% UMKM merasa kesulitan meluangkan waktu untuk proses sertifikasi. Biarkan kami yang membantu Anda. Fokus pada bisnis Anda, kami urus sertifikasinya.
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {services.map((service, index) => (
           <Card
             key={index}
@@ -94,7 +109,7 @@ export default function MarketPage() {
                 variant={service.isPopular ? 'default' : 'outline'}
                 onClick={() => handleSelectService(service.title)}
               >
-                {service.isPopular ? <Zap className="mr-2"/> : <Shield className="mr-2" />}
+                <service.icon className="mr-2"/>
                 Pilih Layanan Ini
               </Button>
             </CardFooter>
