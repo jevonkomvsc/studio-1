@@ -100,7 +100,7 @@ const VendorDashboard = () => (
         </Card>
     </div>
 
-    <Card className="col-span-1 md:col-span-2 lg:col-span-2">
+    <Card className="col-span-1 md:col-span-2 lg:col-span-3">
       <CardHeader>
         <CardTitle>Permintaan Sertifikasi Halal Baru</CardTitle>
         <CardDescription>Kelola permintaan yang masuk dari UKM.</CardDescription>
@@ -133,34 +133,6 @@ const VendorDashboard = () => (
           </TableBody>
         </Table>
       </CardContent>
-    </Card>
-
-    <Card>
-      <CardHeader>
-        <CardTitle>Grafik Stok</CardTitle>
-        <CardDescription>Stok produk bahan pokok</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ChartContainer config={chartConfig} className="w-full h-[150px]">
-          <BarChart accessibilityLayer data={chartData}>
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              tickMargin={10}
-              axisLine={false}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
-            <ChartTooltip content={<ChartTooltipContent hideLabel />} />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-          </BarChart>
-        </ChartContainer>
-      </CardContent>
-       <CardFooter>
-        <Link href="/stock" className='w-full'>
-          <Button variant="outline" className="w-full">Kelola Stok</Button>
-        </Link>
-      </CardFooter>
     </Card>
   </div>
 );
