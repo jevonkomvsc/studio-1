@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -13,6 +13,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { ChartContainer, ChartTooltip, ChartTooltipContent, ChartConfig } from "@/components/ui/chart"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 import { Badge } from '@/components/ui/badge';
+import { AppContext } from '../layout';
 
 
 const chartData = [
@@ -187,7 +188,15 @@ const VendorDashboard = () => (
 
 
 export default function DashboardPage() {
-  const [role, setRole] = useState<UserRole>('buyer');
+  const appContext = useContext(AppContext);
+
+  if (!appContext) {
+    // or return a loading indicator
+    return null;
+  }
+
+  const { role, setRole } = appContext;
+
 
   return (
     <div className="space-y-6">
