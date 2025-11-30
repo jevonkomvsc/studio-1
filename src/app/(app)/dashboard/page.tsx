@@ -47,7 +47,7 @@ const BuyerDashboard = () => (
         </Link>
         <Link href="/market" className='w-full'>
           <Button variant="outline" className="w-full bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
-            <PackageSearch className="mr-2" /> Kontrak Bahan Pokok
+            <PackageSearch className="mr-2" /> Lihat Layanan Sertifikasi
           </Button>
         </Link>
       </CardContent>
