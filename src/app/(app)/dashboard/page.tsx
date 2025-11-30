@@ -53,7 +53,7 @@ const BuyerDashboard = () => (
       </CardContent>
     </Card>
 
-    <Card className="col-span-1 md:col-span-1 lg:col-span-2">
+    <Card className="col-span-1 md:col-span-2 lg:col-span-3">
       <CardHeader>
         <CardTitle>Progres Sertifikasi Halal</CardTitle>
         <CardDescription>Warung Nasi Uduk Ibu Siti</CardDescription>
@@ -69,27 +69,6 @@ const BuyerDashboard = () => (
       <CardFooter>
         <Link href="/certification" className='w-full'>
           <Button variant="outline" className="w-full">Lihat Detail <ArrowRight className="ml-2" /></Button>
-        </Link>
-      </CardFooter>
-    </Card>
-
-    <Card>
-      <CardHeader>
-        <CardTitle>Pengiriman Berikutnya</CardTitle>
-        <CardDescription>Jadwal kiriman bahan pokok Anda.</CardDescription>
-      </CardHeader>
-      <CardContent className="flex items-center gap-4">
-        <div className="p-3 rounded-md bg-muted">
-          <Truck className="w-8 h-8 text-primary" />
-        </div>
-        <div>
-          <p className="font-semibold">Beras Premium</p>
-          <p className="text-sm text-muted-foreground">Estimasi: 3 hari lagi</p>
-        </div>
-      </CardContent>
-       <CardFooter>
-        <Link href="/contracts" className='w-full'>
-          <Button variant="outline" className="w-full">Lihat Semua Kontrak</Button>
         </Link>
       </CardFooter>
     </Card>
