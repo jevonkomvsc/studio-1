@@ -13,29 +13,17 @@ import { Check, Shield, Zap, Gem } from 'lucide-react';
 
 const services = [
   {
-    title: 'Layanan Prioritas',
-    price: 'Rp 2.500.000',
-    description: 'Percepat proses sertifikasi Anda dengan bantuan ahli kami.',
-    features: [
-      'Konsultasi awal & peninjauan dokumen',
-      'Bantuan pengisian formulir & submit dokumen',
-      'Antrian prioritas untuk audit',
-      'Update progres mingguan',
-    ],
-    isPopular: true,
-    icon: Zap
-  },
-  {
     title: 'Pendampingan Penuh',
     price: 'Rp 5.000.000',
     description: 'Serahkan semua urusan sertifikasi kepada kami dari awal hingga akhir.',
     features: [
-      'Semua fitur Layanan Prioritas',
+      'Konsultasi awal & peninjauan dokumen',
+      'Bantuan pengisian formulir & submit dokumen',
       'Pendampingan saat audit lapangan',
       'Koordinasi dengan lab & LPPOM MUI',
       'Jaminan sertifikat terbit atau uang kembali',
     ],
-    isPopular: false,
+    isPopular: true,
     icon: Shield
   },
   {
@@ -73,7 +61,7 @@ export default function MarketPage() {
           Berdasarkan data kami, 89% UMKM merasa kesulitan meluangkan waktu untuk proses sertifikasi. Biarkan kami yang membantu Anda. Fokus pada bisnis Anda, kami urus sertifikasinya.
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-4xl mx-auto">
         {services.map((service, index) => (
           <Card
             key={index}
