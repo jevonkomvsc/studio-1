@@ -1,82 +1,101 @@
 'use client';
-import Image from 'next/image';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { mockProducts } from '@/lib/mock-data';
-import { Warehouse, Clock, Package } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { useState, useEffect } from 'react';
-import type { Product } from '@/lib/types';
+import { Check, Shield, Zap } from 'lucide-react';
 
+const services = [
+  {
+    title: 'Layanan Prioritas',
+    price: 'Rp 2.500.000',
+    description: 'Percepat proses sertifikasi Anda dengan bantuan ahli kami.',
+    features: [
+      'Konsultasi awal & peninjauan dokumen',
+      'Bantuan pengisian formulir & submit dokumen',
+      'Antrian prioritas untuk audit',
+      'Update progres mingguan',
+    ],
+    isPopular: true,
+  },
+  {
+    title: 'Pendampingan Penuh',
+    price: 'Rp 5.000.000',
+    description: 'Serahkan semua urusan sertifikasi kepada kami dari awal hingga akhir.',
+    features: [
+      'Semua fitur Layanan Prioritas',
+      'Pendampingan saat audit lapangan',
+      'Koordinasi dengan lab & LPPOM MUI',
+      'Jaminan sertifikat terbit atau uang kembali',
+    ],
+    isPopular: false,
+  },
+];
 
 export default function MarketPage() {
   const { toast } = useToast();
-  const [products, setProducts] = useState<Product[]>([]);
 
-  useEffect(() => {
-    // In a real app, you would fetch this from an API
-    // For now, we use mock data and manage it in local state
-    const storedProducts = localStorage.getItem('products');
-    if (storedProducts) {
-      setProducts(JSON.parse(storedProducts));
-    } else {
-      setProducts(mockProducts);
-    }
-  }, []);
-
-  const handleCreateContract = (productName: string) => {
+  const handleSelectService = (serviceTitle: string) => {
     toast({
-        title: "Kontrak Dibuat!",
-        description: `Kontrak untuk ${productName.split(" Kontrak")[0]} telah berhasil dibuat.`,
+      title: 'Layanan Dipilih!',
+      description: `Anda telah memilih ${serviceTitle}. Tim kami akan segera menghubungi Anda.`,
     });
-  }
+  };
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold font-headline">Marketplace Kontrak</h1>
-        <p className="text-muted-foreground">Amankan harga bahan pokok Anda selama 12 bulan ke depan.</p>
+    <div className="space-y-8">
+      <div className="text-center">
+        <h1 className="text-3xl font-bold font-headline md:text-4xl">
+          Tidak Punya Waktu Mengurus Sertifikasi?
+        </h1>
+        <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+          Berdasarkan data kami, 89% UMKM merasa kesulitan meluangkan waktu untuk proses sertifikasi. Biarkan kami yang membantu Anda. Fokus pada bisnis Anda, kami urus sertifikasinya.
+        </p>
       </div>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {products.map((product) => (
-          <Card key={product.product_id} className="flex flex-col">
-            <CardHeader className="p-0">
-              <div className="relative h-48 w-full">
-                <Image
-                  src={product.imageUrl}
-                  alt={product.name}
-                  fill
-                  className="object-cover rounded-t-lg"
-                  data-ai-hint={product.imageHint}
-                />
-                <Badge className="absolute top-2 right-2 bg-accent text-accent-foreground">Harga Tetap</Badge>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+        {services.map((service, index) => (
+          <Card
+            key={index}
+            className={`flex flex-col ${
+              service.isPopular ? 'border-primary ring-2 ring-primary shadow-lg' : ''
+            }`}
+          >
+            {service.isPopular && (
+              <div className="py-2 px-4 bg-primary text-primary-foreground text-sm font-semibold text-center rounded-t-lg">
+                Paling Populer
               </div>
+            )}
+            <CardHeader className="items-center text-center">
+              <CardTitle className="text-2xl">{service.title}</CardTitle>
+              <p className="text-3xl font-bold font-headline text-primary">
+                {service.price}
+              </p>
+              <CardDescription>{service.description}</CardDescription>
             </CardHeader>
-            <div className='p-6 flex-grow'>
-              <CardTitle className="text-xl mb-2">{product.name.split(" Kontrak")[0]}</CardTitle>
-              <CardDescription>oleh {product.vendor_id === 'user-2' ? 'Halal Vendor Jaya' : 'Vendor Lain'}</CardDescription>
-              <div className="mt-4 space-y-2 text-sm">
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Warehouse className="w-4 h-4" />
-                  <span>Stok Tersedia: {product.stock} {product.unit}</span>
-                </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Clock className="w-4 h-4" />
-                  <span>Durasi Kontrak: 12 Bulan</span>
-                </div>
-              </div>
-            </div>
-            <CardFooter className="flex-col items-start gap-4">
-               <div className="w-full text-left">
-                <p className="text-xs text-muted-foreground">Harga per {product.unit}</p>
-                <p className="text-2xl font-bold font-headline text-primary">
-                  {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(product.contract_price)}
-                </p>
-              </div>
-              <Button className="w-full" onClick={() => handleCreateContract(product.name)}>
-                <Package className="w-4 h-4 mr-2" />
-                Buat Kontrak
+            <CardContent className="flex-grow">
+              <ul className="space-y-3">
+                {service.features.map((feature, i) => (
+                  <li key={i} className="flex items-start">
+                    <Check className="w-5 h-5 mr-3 text-green-500 shrink-0 mt-1" />
+                    <span className="text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button
+                className="w-full"
+                variant={service.isPopular ? 'default' : 'outline'}
+                onClick={() => handleSelectService(service.title)}
+              >
+                {service.isPopular ? <Zap className="mr-2"/> : <Shield className="mr-2" />}
+                Pilih Layanan Ini
               </Button>
             </CardFooter>
           </Card>
