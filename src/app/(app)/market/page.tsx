@@ -35,6 +35,7 @@ const services = [
         'Pengurusan Izin Edar (jika diperlukan)',
         'Desain kemasan berlogo Halal',
         'Konsultasi pasca-sertifikasi selama 6 bulan',
+        'Notifikasi progres mingguan via Email & WhatsApp'
     ],
     isPopular: false,
     icon: Gem
