@@ -59,7 +59,7 @@ export default function MarketPage() {
           Tidak Punya Waktu Mengurus Sertifikasi?
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-          Berdasarkan data kami, 89% UMKM merasa kesulitan meluangkan waktu untuk proses sertifikasi. Biarkan kami yang membantu Anda. Fokus pada bisnis Anda, kami urus sertifikasinya.
+          Berdasarkan data kami, 89% UKM merasa kesulitan meluangkan waktu untuk proses sertifikasi. Biarkan kami yang membantu Anda. Fokus pada bisnis Anda, kami urus sertifikasinya.
         </p>
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-4xl mx-auto">

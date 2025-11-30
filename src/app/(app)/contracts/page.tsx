@@ -8,7 +8,7 @@ import { format } from 'date-fns';
 const serviceContracts = [
   {
     id: "KTR-SRV-001",
-    umkmName: "Warung Nasi Uduk Ibu Siti",
+    ukmName: "Warung Nasi Uduk Ibu Siti",
     serviceName: "Pendampingan Penuh",
     price: 5000000,
     status: "active",
@@ -17,7 +17,7 @@ const serviceContracts = [
   },
   {
     id: "KTR-SRV-002",
-    umkmName: "Kue Balok Mang Ujang",
+    ukmName: "Kue Balok Mang Ujang",
     serviceName: "Layanan V.I.P",
     price: 10000000,
     status: "pending",
@@ -37,7 +37,7 @@ export default function ContractsPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>UMKM</TableHead>
+              <TableHead>UKM</TableHead>
               <TableHead>Paket Layanan</TableHead>
               <TableHead>Biaya</TableHead>
               <TableHead>Periode Kontrak</TableHead>
@@ -49,7 +49,7 @@ export default function ContractsPage() {
             {serviceContracts.map((contract) => (
               <TableRow key={contract.id}>
                 <TableCell className="font-medium">
-                  <div>{contract.umkmName}</div>
+                  <div>{contract.ukmName}</div>
                   <div className="text-xs text-muted-foreground">{contract.id}</div>
                 </TableCell>
                 <TableCell>

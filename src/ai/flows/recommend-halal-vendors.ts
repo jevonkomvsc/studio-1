@@ -17,7 +17,7 @@ const RecommendHalalVendorsInputSchema = z.object({
   requirements: z
     .string()
     .describe(
-      'The specific requirements for Halal certification, including details about the UMKM, products, and target market.'
+      'The specific requirements for Halal certification, including details about the UKM, products, and target market.'
     ),
   preferences: z
     .string()
@@ -66,10 +66,10 @@ const recommendVendorsPrompt = ai.definePrompt({
   name: 'recommendVendorsPrompt',
   input: {schema: RecommendHalalVendorsInputSchema},
   output: {schema: RecommendHalalVendorsOutputSchema},
-  prompt: `You are an expert in matching UMKM businesses with Halal certification vendors.
+  prompt: `You are an expert in matching UKM businesses with Halal certification vendors.
 
-  Given the following requirements and preferences from a UMKM user, recommend a short list of Halal certification vendors.
-  Consider location, pricing, services offered, and the specific needs of the UMKM.
+  Given the following requirements and preferences from a UKM user, recommend a short list of Halal certification vendors.
+  Consider location, pricing, services offered, and the specific needs of the UKM.
   Each Vendor should have a suitability score and rationale.
 
   Requirements: {{{requirements}}}

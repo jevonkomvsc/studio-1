@@ -71,7 +71,7 @@ export const mockHalalRequests: HalalRequest[] = [
   {
     request_id: 'req-1',
     buyer_id: 'user-1',
-    umkmName: 'Warung Nasi Uduk Ibu Siti',
+    ukmName: 'Warung Nasi Uduk Ibu Siti',
     status: 'processing',
     documents: ['NIB.pdf', 'PIRT.pdf'],
     progress_percent: 45,
@@ -81,7 +81,7 @@ export const mockHalalRequests: HalalRequest[] = [
   {
     request_id: 'req-2',
     buyer_id: 'user-3',
-    umkmName: 'Katering Sehat Mba Ani',
+    ukmName: 'Katering Sehat Mba Ani',
     status: 'pending',
     documents: [],
     progress_percent: 10,
@@ -90,7 +90,7 @@ export const mockHalalRequests: HalalRequest[] = [
   {
     request_id: 'req-3',
     buyer_id: 'user-4',
-    umkmName: 'Bakso Pak Budi',
+    ukmName: 'Bakso Pak Budi',
     status: 'revision',
     documents: ['NIB.pdf', 'PIRT.pdf', 'Komposisi.pdf'],
     progress_percent: 25,

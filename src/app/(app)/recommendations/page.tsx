@@ -66,7 +66,7 @@ export default function RecommendationsPage() {
             Rekomendasi Vendor Cerdas
           </CardTitle>
           <CardDescription>
-            Biarkan AI kami membantu Anda menemukan vendor sertifikasi halal terbaik yang sesuai dengan kebutuhan unik UMKM Anda.
+            Biarkan AI kami membantu Anda menemukan vendor sertifikasi halal terbaik yang sesuai dengan kebutuhan unik UKM Anda.
           </CardDescription>
         </CardHeader>
         <CardContent>

@@ -18,7 +18,7 @@ export interface HalalRequest {
   status: HalalRequestStatus;
   documents: string[]; // URLs or file names
   progress_percent: number;
-  umkmName: string;
+  ukmName: string;
   createdAt: string;
 }
 

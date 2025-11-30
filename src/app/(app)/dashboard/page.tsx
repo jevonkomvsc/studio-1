@@ -124,13 +124,13 @@ const VendorDashboard = () => (
     <Card className="col-span-1 md:col-span-2 lg:col-span-2">
       <CardHeader>
         <CardTitle>Permintaan Sertifikasi Halal Baru</CardTitle>
-        <CardDescription>Kelola permintaan yang masuk dari UMKM.</CardDescription>
+        <CardDescription>Kelola permintaan yang masuk dari UKM.</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Nama UMKM</TableHead>
+              <TableHead>Nama UKM</TableHead>
               <TableHead>Status</TableHead>
               <TableHead className="text-right">Aksi</TableHead>
             </TableRow>
@@ -138,7 +138,7 @@ const VendorDashboard = () => (
           <TableBody>
             {mockHalalRequests.slice(0, 3).map(req => (
               <TableRow key={req.request_id}>
-                <TableCell className="font-medium">{req.umkmName}</TableCell>
+                <TableCell className="font-medium">{req.ukmName}</TableCell>
                 <TableCell>
                   <Badge variant={
                     req.status === 'pending' ? 'destructive' : req.status === 'revision' ? 'secondary' : 'default'
@@ -202,7 +202,7 @@ export default function DashboardPage() {
     <div className="space-y-6">
       <Tabs value={role} onValueChange={(value) => setRole(value as UserRole)} className="w-full">
         <TabsList className="grid w-full grid-cols-2 max-w-sm mx-auto">
-          <TabsTrigger value="buyer">Tampilan Pembeli (UMKM)</TabsTrigger>
+          <TabsTrigger value="buyer">Tampilan Pembeli (UKM)</TabsTrigger>
           <TabsTrigger value="vendor">Tampilan Penjual (Vendor)</TabsTrigger>
         </TabsList>
         <TabsContent value="buyer">

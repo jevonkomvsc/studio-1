@@ -147,7 +147,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               <div className="flex flex-col">
                 <span className="text-sm font-medium">Adi Saputra</span>
                 <span className="text-xs text-muted-foreground">
-                  {role === 'buyer' ? 'UMKM Buyer' : 'Vendor'}
+                  {role === 'buyer' ? 'UKM Buyer' : 'Vendor'}
                 </span>
               </div>
             </div>
